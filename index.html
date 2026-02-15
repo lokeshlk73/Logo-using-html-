@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Steaming Cup | Artisan Coffee</title>
+    <style>
+        :root {
+            --cup-color: #000000;
+            --coffee-color: #6F4E37;
+            --bg-color: #f9f9f9;
+            --text-main: #333;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        /* --- CSS LOGO RECREATION --- */
+        .logo-container {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin-bottom: 20px;
+        }
+
+        /* The Cup Body */
+        .cup {
+            position: absolute;
+            bottom: 20px;
+            left: 25px;
+            width: 80px;
+            height: 70px;
+            background-color: var(--cup-color);
+            border-radius: 5px 5px 50px 50px;
+            overflow: hidden; /* Clips the coffee liquid */
+        }
+
+        /* The Coffee Liquid */
+        .coffee-liquid {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 60%;
+            background-color: var(--coffee-color);
+            border-radius: 50% 50% 0 0 / 20% 20% 0 0;
+        }
+
+        /* The Handle */
+        .handle {
+            position: absolute;
+            right: 30px;
+            top: 65px;
+            width: 25px;
+            height: 35px;
+            border: 8px solid var(--cup-color);
+            border-radius: 0 15px 15px 0;
+        }
+
+        /* The Steam */
+        .steam {
+            position: absolute;
+            top: 10px;
+            left: 60px;
+            width: 4px;
+            height: 40px;
+            background: var(--coffee-color);
+            border-radius: 2px;
+            filter: blur(1px);
+            opacity: 0.7;
+            animation: drift 3s infinite ease-in-out;
+        }
+
+        @keyframes drift {
+            0%, 100% { transform: translateY(0) skewX(5deg); opacity: 0.4; }
+            50% { transform: translateY(-10px) skewX(-5deg); opacity: 0.8; }
+        }
+
+        /* --- CONTENT STYLES --- */
+        .content {
+            max-width: 600px;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin: 10px 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        p {
+            line-height: 1.6;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .cta-button {
+            margin-top: 30px;
+            padding: 12px 30px;
+            background-color: var(--cup-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--coffee-color);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logo-container">
+        <div class="steam"></div>
+        <div class="cup">
+            <div class="coffee-liquid"></div>
+        </div>
+        <div class="handle"></div>
+    </div>
+
+    <div class="content">
+        <h1>The Steaming Cup</h1>
+        <p>
+            Welcome to <strong>The Steaming Cup</strong>, where every bean tells a story. 
+            Located in the heart of the city, we specialize in ethically sourced, 
+            small-batch roasts crafted to perfection by our master baristas.
+        </p>
+        <p>
+            Whether you need a quiet corner for deep work or a vibrant space to catch up 
+            with friends, we provide the perfect blend of atmosphere and caffeine.
+        </p>
+        <a href="#" class="cta-button">View Our Menu</a>
+    </div>
+
+</body>
+</html>
